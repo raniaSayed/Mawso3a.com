@@ -1,0 +1,52 @@
+<html>
+	<head>
+		<title> Write Somethimg</title>
+		<link type="text/css" href="Styles.css" rel="stylesheet" />
+		<script type="text/javascript">
+			function validate() {
+				
+
+				var text = document.forms["Form"]["text"].value;
+				var title = document.forms["Form"]["title"].value;
+				var image = document.forms["Form"]["image"].value;
+
+				if (title == "" || title == null) {
+					alert("Please Enter Title");
+					return false;
+				}
+
+				if (text == "" || text == null) {
+					alert("please Type Text");
+					return false;
+				}
+				
+				if(image =="" || image == null){
+					alert("please upload photo");
+					return false;
+				}
+
+				return true;
+			}
+		</script>
+
+	</head>
+	
+	<body>
+		<form name="Form" onsubmit="return validate();" action="writePost.php" method="post">
+
+			<input name = "title" placeholder="Title" >
+			
+			<br />
+			<br />
+			<textarea name = "text" cols="100" rows="20" placeholder ="Enter Your Post"></textarea>
+			<br>
+			<br />
+			<input type = "file" name = "image" class="Styles.css" placeholder="chooce photo" class="Styles.css"/>
+			<button type="submit">
+				Done!
+			</button>
+
+		</form>
+	</body>
+
+</html>

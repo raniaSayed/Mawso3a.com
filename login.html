@@ -1,0 +1,37 @@
+<html>
+<head>
+	<link type="text/css" rel="stylesheet" href="Styles.css" />
+	<title>Login</title>
+	<script type="text/javascript">
+	function validate(){
+		var name = document.forms["Loginform"]["name"].value;
+		//alert(name);
+
+		if(name == null || name == ""){
+			alert("please enter ur name");
+			return false;
+		}
+		var password = document.forms["Loginform"]["password"].value;
+		document.write(password);
+		if(password == null || password == ""){
+			alert("please enter password");
+			return false;
+		}
+		return true;
+	}
+	</script>
+
+
+</head>
+<body>
+	<form name ="Loginform" method = "post" Action = "login.php" onsubmit = "return validate()">
+		<input type ="text" name ="name" placeholder ="User Name" class ="loginStyle">
+		<input type ="password" name ="password" placeholder ="Password" class = "loginStyle">
+		<button type ="submit" class ="loginStyle">Login</buttton>
+			<br>
+		<button type ="submit" class ="loginStyle" formaction = "signup.html">SignUp</buttton>
+	</form>
+	
+	
+</body>
+</html>

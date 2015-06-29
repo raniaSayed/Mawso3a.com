@@ -1,0 +1,40 @@
+<html>
+<head>
+<title>SignUp Form</title>
+<link type="text/css" rel="stylesheet" href="Styles.css" />
+<script type="text/javascript">
+ function validate(){
+ 	var name = document.forms["SignupForm"]["Name"].value;
+ 	if(name==null || name==""){
+ 		alert("type name");
+ 		return false;
+
+ 	}
+ 	var password = document.forms["SignupForm"]["Password"].value;
+ 	if(password==null || password==""){
+ 		alert("password must be filled");
+ 		return false;
+ 	}
+ 	if(password.length <'5'){
+ 		alert("password is weak");
+ 		return false;
+ 	}
+ 	var repassword = document.forms["SignupForm"]["repassword"].value;
+ 	if(password != repassword){
+ 		alert("password must be identical");
+ 		return false;
+ 	}
+    return true;
+
+ }
+</script>
+</head>
+<body background ="a.jpg">
+	<form name = "SignupForm" method ="post" Action ="signup.php" onsubmit ="return validate()">
+		<input type ="text" name ="Name" placeholder = "ur Name" class="signupStyle"/>
+		<input type ="password" name ="password" placeholder ="password" class="signupStyle">
+		<input type ="password" name ="repassword" placeholder ="repassword" class="signupStyle">
+		<button type ="submit" class ="signupStyle" >Signup</button>
+	</form>
+</body>
+</html>
