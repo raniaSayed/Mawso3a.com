@@ -10,7 +10,7 @@
  		return false;
 
  	}
- 	var password = document.forms["SignupForm"]["Password"].value;
+ 	var password = document.forms["SignupForm"]["password"].value;
  	if(password==null || password==""){
  		alert("password must be filled");
  		return false;
@@ -30,7 +30,7 @@
 </script>
 </head>
 <body background ="a.jpg">
-	<form name = "SignupForm" method ="post" Action ="signup.php" onsubmit ="return validate()">
+	<form name = "SignupForm" method ="post" Action ="signup.php" onsubmit ="return validate();">
 		<input type ="text" name ="Name" placeholder = "ur Name" class="signupStyle"/>
 		<input type ="password" name ="password" placeholder ="password" class="signupStyle">
 		<input type ="password" name ="repassword" placeholder ="repassword" class="signupStyle">

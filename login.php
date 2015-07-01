@@ -19,12 +19,12 @@ $serverName ="localhost";
 $sql = "SELECT * FROM `users` WHERE ` Name` = '$name' and `Password` = '$password'";
 $result = $connect->query($sql);
 if ($result->num_rows > 0) {
-	include("home.html");
+	header('Location:'."home.php");
 
 	}
 	else{
 		//return to login.html
-		include("login.html");
+		header('Location: ' ."login.html");
 	}
 
 

@@ -1,0 +1,36 @@
+
+
+font {
+	color:
+	#090}
+#header{
+	background:#300;
+	position:absolute;
+	width:100%;
+	top:0;
+	right:0;
+	left:0;
+}
+img{
+	height:50px;
+	width:70px;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+}
+#nav{
+	float:left;
+	text-decoration:none;
+	color:#063;
+}
+li{
+	color:#0C0;
+	font-size:24px;
+	color:#090;
+	list-style:none;
+	float:right;
+	margin-left:15px;
+	margin-top:20px;
+}
+}

@@ -4,7 +4,6 @@
 		<link type="text/css" href="Styles.css" rel="stylesheet" />
 		<script type="text/javascript">
 			function validate() {
-				
 
 				var text = document.forms["Form"]["text"].value;
 				var title = document.forms["Form"]["title"].value;
@@ -19,8 +18,8 @@
 					alert("please Type Text");
 					return false;
 				}
-				
-				if(image =="" || image == null){
+
+				if (image == "" || image == null) {
 					alert("please upload photo");
 					return false;
 				}
@@ -30,18 +29,18 @@
 		</script>
 
 	</head>
-	
+
 	<body>
-		<form name="Form" onsubmit="return validate();" action="writePost.php" method="post">
+		<form name="Form" onsubmit="return validate();" action="writePost.php" method="post" enctype="multipart/form-data">
 
 			<input name = "title" placeholder="Title" >
-			
+
 			<br />
 			<br />
 			<textarea name = "text" cols="100" rows="20" placeholder ="Enter Your Post"></textarea>
 			<br>
 			<br />
-			<input type = "file" name = "image" class="Styles.css" placeholder="chooce photo" class="Styles.css"/>
+			<input type = "file" name = "image" class="Styles.css"/>
 			<button type="submit">
 				Done!
 			</button>

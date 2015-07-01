@@ -20,7 +20,7 @@ $password= $_POST["password"];
 	    echo "New record created successfully";
 	} else {
 		
-		include("signup.html");
+		header('Location: ' ."signup.html");
 		echo "<strong> try another name</strong> ";
 	    //echo "Error: " . $sql . "<br>" . $connect->error;
 	}
