@@ -5,11 +5,12 @@ $_SESSION["name"] = $name;
 echo $_SESSION["name"] ;
 $password = $_POST["password"];
 //echo $password;
-$serverName ="localhost";
+    $serverName ="localhost";
  	$dbUserName = "root";
  	$dbPassword ="";
  	$dbName ="data";
  	$connect = mysqli_connect($serverName,$dbUserName,$dbPassword,$dbName);
+ //	 $connect = new PDO("mysql:host=$serverName;dbname=data", $dbUserName, $dbPassword);
 
     // Check connection
     if (!$connect) {
@@ -22,13 +23,11 @@ if ($result->num_rows > 0) {
 	header('Location:'."home.php");
 
 	}
-	else{
+else{
 		//return to login.html
-		header('Location: ' ."login.html");
+	header('Location: ' ."login.html");
 	}
-
-
-
+$connect=null;
 
 
 

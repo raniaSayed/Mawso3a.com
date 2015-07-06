@@ -2,23 +2,26 @@
 <head>
 	<title> Mawso3a </title>
 	<link type="text/css" rel="stylesheet" href="header.css" />
+	<link type="text/css" rel="stylesheet" href="Styles.css" />
 </head>
 <body>
 	<div id="header">
 	<div id="container">
 	<div id="nav">
 	<ul>
-	<li> <a href="#">Contact us</a></li>
-	<li> <a href="#">Magazine</a></li>
-	<li> <a href="#">Projects</a></li>
-	<li> <a href="#">HOME</a></li>
+	<li> <a href="#"></a></li>
+	<li> <a href="#"></a></li>
+	<li> <a href="writePost.html">Write New Post</a></li>
+	<li> <a href="user.php"><?php session_start(); echo $_SESSION["name"];?></a></li>
+	
 	</ul>
 	</div>
 	</div>
 	</div>
-</body>
+	
+<div class="style">
 <?php 
-$serverName ="localhost";
+    $serverName ="localhost";
  	$dbUserName = "root";
  	$dbPassword ="";
  	$dbName ="data";
@@ -30,12 +33,24 @@ $serverName ="localhost";
     }
 $sql = "Select * From posts";
 $result = $connect->query($sql);
-if($row = $result->fetch_assoc()){
-	
+while($row = $result->fetch_assoc()){
+	 echo  '<img src="data:image/jpeg;base64,'  .base64_encode($row['Image']) .'" /><br>"';
+	 echo  $row["Title"] ."</a> <br>";
+	 echo "By.. ". $row["Author"];
 }
-
-
-
+ function findPost($title){
+ 	$serverName ="localhost";
+ 	$dbUserName = "root";
+ 	$dbPassword ="";
+ 	$dbName ="data";
+ 	$connect = mysqli_connect($serverName,$dbUserName,$dbPassword,$dbName);
+	
+ 	$sql = "Select * From posts Where title =".$title ;
+    $result = $connect->query($sql);
+    $row = $result->fetch_assoc();
+	return $row;
+ }
 ?>
-<a href="WritePost.html">WritePost</a>
+</div>
+</body>
 </html>
