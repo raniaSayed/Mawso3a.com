@@ -1,4 +1,5 @@
 <?php
+include_once ('class.database.php');
 session_start();
 $name = $_POST["name"];
 $_SESSION["name"] = $name;
@@ -10,8 +11,7 @@ $password = $_POST["password"];
  	$dbPassword ="";
  	$dbName ="data";
  	$connect = mysqli_connect($serverName,$dbUserName,$dbPassword,$dbName);
- //	 $connect = new PDO("mysql:host=$serverName;dbname=data", $dbUserName, $dbPassword);
-
+ 	// $connect = new PDO("mysql:host=$serverName;dbname=data", $dbUserName, $dbPassword);
     // Check connection
     if (!$connect) {
         die("Connection failed: " . mysqli_connect_error());
