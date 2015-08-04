@@ -1,9 +1,10 @@
 <?php
-
-$name    = $_POST["Name"];
+session_start();
+$name = $_POST["name"];
+$_SESSION["name"] =$_POST["name"];
+$email = $_POST["email"];
 $password= $_POST["password"];
- //	echo $name;
- //	echo $Password;
+
  	$serverName ="localhost";
  	$dbUserName = "root";
  	$dbPassword ="";
@@ -15,12 +16,12 @@ $password= $_POST["password"];
         die("Connection failed: " . mysqli_connect_error());
     }
     //insert data
-    $sql = "INSERT INTO `users` (` Name`, `Password`) VALUES ('$name', '$password');";
+    $sql = "INSERT INTO `users`(`Email`, `Name`, `Password`) VALUES ('$email','$name', '$password');";
 	if ($connect->query($sql) === TRUE) {
-	    echo "New record created successfully";
+	    header('Location: ' .'home.php');
 	} else {
+		echo 'some error occured';
 		
-		header('Location: ' ."signup.html");
 		echo "<strong> try another name</strong> ";
 	    //echo "Error: " . $sql . "<br>" . $connect->error;
 	}

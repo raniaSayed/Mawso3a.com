@@ -1,11 +1,10 @@
 <?php
-include_once ('class.database.php');
 session_start();
-$name = $_POST["name"];
-$_SESSION["name"] = $name;
-echo $_SESSION["name"] ;
+$email = $_POST["email"];
+//$name;
 $password = $_POST["password"];
 //echo $password;
+
     $serverName ="localhost";
  	$dbUserName = "root";
  	$dbPassword ="";
@@ -17,7 +16,13 @@ $password = $_POST["password"];
         die("Connection failed: " . mysqli_connect_error());
     }
 
-$sql = "SELECT * FROM `users` WHERE ` Name` = '$name' and `Password` = '$password'";
+$name = "SELECT * FROM `users` WHERE `Email` = '$email'";
+$result = $connect->query($name);
+while($row = $result->fetch_assoc()){
+	$_SESSION["name"] = $row["Name"];
+}
+$sql = "SELECT * FROM `users` WHERE `Email` = '$email' and `Password` = '$password'";
+
 $result = $connect->query($sql);
 if ($result->num_rows > 0) {
 	header('Location:'."home.php");
@@ -25,7 +30,8 @@ if ($result->num_rows > 0) {
 	}
 else{
 		//return to login.html
-	header('Location: ' ."login.html");
+	header('Location: ' .'bootstrap-3.3.5\docs\examples\login\login.html');
+	
 	}
 $connect=null;
 

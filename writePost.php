@@ -24,13 +24,13 @@ $image = file_get_contents($file);
 $image = addslashes($image);
 //echo $image;
 //insert post if current user != null;
-$sql = "INSERT INTO `posts`(`Author`, `Date`,`Image`, `Title`,`Text`) 
-		VALUES ('$userName','$date', '$image', '$title', '$post')";
-if ($connect -> query($sql) === TRUE) {
+$sql = "INSERT INTO `posts`(`Author`, `Date`, `Title`, `Image`, `Text`) VALUES ('$userName','$date', '$title','$image', '$post');";
+
+if ($connect->query($sql) === TRUE) {
 	header('Location: ' . "home.php");
-} else {
+}/* else {
 	header('Location: ' . "writePost.html");
 	echo "<Strong>Failed!!</Strong";
 
-}
+}*/
 ?>

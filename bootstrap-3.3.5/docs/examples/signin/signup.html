@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+<meta name="description" content="read and write public Articles ">
+<meta name="author" content="rania sayed">
+<link rel="icon" href="../../favicon.ico">
+
+<title>Mawso3a</title>
+<script type="text/javascript">
+	function validate() {
+
+		var password = document.forms["loginForm"]["password"].value;
+
+		if (password.length < 6) {
+			alert("Week Password");
+
+			return false;
+		}
+
+		var rePassword = document.forms["loginForm"]["rePassword"].value;
+
+		if (password != rePassword) {
+			alert("password not match!!");
+			return false;
+		}
+
+		return true;
+	}
+</script>
+<!-- Bootstrap core CSS -->
+<link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Custom styles for this template -->
+<link href="signin.css" rel="stylesheet">
+
+<!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+<!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+
+
+</head>
+
+<body>
+
+	<div class="container">
+
+		<form class="form-signin" name="loginForm" method="post"
+			action="../../../../signup.php" onsubmit="return validate()">
+			<h1 class="form-signin-heading">Mawso3a</h1>
+			<h2 class="form-signin-heading">Please sign up</h2>
+			<input type="email" id="inputEmail" name="email" class="form-control"
+				placeholder="Email" required>
+			<label for="inputName" class="sr-only">Email address</label> 
+			<input type="text" id="inputName" name="name" class="form-control"
+				placeholder="Name" required> <label for="inputPassword"
+				class="sr-only">Password</label> <input type="password"
+				name="password" class="form-control" placeholder="Password" required>
+			<input type="password" name="rePassword" class="form-control"
+				placeholder="Password" required>
+			<div class="checkbox">
+				<label> <input type="checkbox" value="remember-me">
+					Remember me
+				</label>
+			</div>
+			<button class="btn btn-lg btn-primary btn-block" type="submit">Sign
+				up</button>
+		</form>
+
+	</div>
+	<!-- /container -->
+
+</body>
+</html>
